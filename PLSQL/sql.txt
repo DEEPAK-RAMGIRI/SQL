@@ -1,0 +1,143 @@
+nsystem
+deepak
+
+data base is a collection of organised tables.
+
+sequel or sql it was created by the IBM.
+data types:
+1.char
+2.varchar(no of values)
+3.blob (binary largest object)
+4.int   (-2,147,483,648 to 2,147,483,647)
+5.Tiny int(-127 to 128)
+6.bigint
+7.bit(no of values)
+8.float
+9.double
+10. date 
+11.year
+12.bolean
+
+C:Create
+R:Read
+U:Update
+D:Delete
+
+*) default : It help to set a  default value.
+*)distinct : It  did n't prints  duplicate value.
+*) where clause : syntax : select * frome t_name where id<18;
+*) we have operators: arthemetic ,comparision,logical,bitwise. and also 'or' .'and' ,'between','in', 'not in'.
+*) we have limit
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+create table t1(id int,name varchar(20), class);  							   #if you give int (primary key) it didn't take duplicates.
+
+insert into t1 values( 01, 'deepak',14);   								   # for better use these insert into t1 values(&id,'&name',&class) and  "/"
+
+select * from t1;
+
+
+select * from t1 where class <14;
+
+alter table t1 modify name varchar(10);
+
+desc t1;c
+
+alter table t1   phno int;                                                                                       # to add extra colmns to the table.
+
+alter table t1 drop column phno;
+
+delete from f1 where name='raju';
+
+select * from t1 where name='deepak';
+
+drop table t1;															#drop table
+
+select * from  t_name order by (city) ASC/desc 								#order by
+
+(aggragate functions ) select max()/min()/count()/avg()/sum() from t_name 	       #aggragate functions
+
+(group by clause) select (adress) ,count(id) from student group by (address).	       #group class
+
+alter table p1 rename column name to full_name;                                                     #to rename the column name
+
+SELECT TOP 3 * FROM Customers;											#returns top 3 values from the table
+
+OFFSET N #It will skip first n values and return after than that
+limit (n) #it will return n number of the rows. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+in ENUM column can have a maximum of 65,535 distinct elements.
+
+==>joins table:	
+	->inner join : select * from table_name1inner join table_name2 on table_name1.column_name = table_name2.column_name
+			    : (or)  select * from table_name1 as t1 inner join table_name2  as t2 on t1.column_name = t2.column_name       #alias
+	->outer joins
+		->left join  :  select * from table_name1 as t1 left join table_name2  as t2 on t1.column_name = t2.column_name       
+		->right join :  select * from table_name1 as t1 right	 join table_name2  as t2 on t1.column_name = t2.column_name       
+		->full join  : usung union : select * from table_name1 as t1 left join table_name2  as t2 on t1.column_name = t2.column_name union select * from table_name1 as t1 right	 join table_name2  as t2 on 						t1.column_name = t2.column_name.
+
+==> left-exclusive: make right as null means :    select * from table_name1 as t1 left join table_name2  as t2 on t1.column_name = t2.column_name   where t1.column_name is null;
+
+==> right-exclusive :make left as null means:     select * from table_name1 as t1 right join table_name2  as t2 on t1.column_name = t2.column_name   where t2.column_name is null;
+
+==>two types of data
+ 
+*)relational data base (tables)
+*)non-relational data bases	(non-tables)
+
+==> general form of data
+-> select coloums
+->from table_name
+->where condition
+->group by columns
+->having conditions
+->order by columns asc
+
+==>types of sql commands
+*)DDL :	data defination language ,create,alter,rename	,truncate
+*)DQL :    data query language , select
+*)DML:    data manipulation language ,update, delete,
+*)DCL:    data control language ,
+*)TCL :    transaction control language ,rollback,save point,
+
+set sql_safe_updates=0/1;
+
+cascading for foreign key :
+if you want to delete content from main and in foriegn tables ::(on delete casade)
+if you want to update content from main and in foriegn tables ::(on update casade)
+
+
+to change column name:
+alter table t_name change column old_name  new_name new_datatype new_constraint.
+ 
+alter table  (old_ table_name) to (new_table_name)
+
+truncate : delete table data but there exists  the table schema
+
+select * from t_name where name like '%a';              #where last letter is a.
+
+select * from t_name where name like 'b%';              #where first letter is b.
+
+select * from t_name where name like '%a_';              #where last secound letter is a.
+
+select * from t_name where name like '_a%;              #where first secound letter is a.
+
+
+start transaction;
+rollback;
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+class:
+==> select distinct(name)  from t_name;
+==>select * from f1 where name like 'd%'
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+single==simple elpse
+
+multivalued=double elipse ex: having more than one phno.
+composite= name divide into lname fname
+derived attribute: dotted
+key:unique underline 
+
+

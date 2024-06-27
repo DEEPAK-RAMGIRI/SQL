@@ -1,0 +1,6 @@
+declare
+x varchar(20):='I am deepak';
+BEGIN
+dbms_output.put_line(x);
+END;
+/
