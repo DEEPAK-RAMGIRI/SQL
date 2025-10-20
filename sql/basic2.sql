@@ -42,3 +42,14 @@ select max(marks) from student;
 select count(*) from student;
 
 select city,count(name) from student group by city; 
+
+select * from student; 
+
+select city, count(marks) as Students from student where marks > 70 group by city;
+
+select city,count(marks) as Students from student group by city having max(marks) > 70;
+
+select city, count(name) as students from student where grade ="A" group by city  having max(marks) > 90;
+
+
+
