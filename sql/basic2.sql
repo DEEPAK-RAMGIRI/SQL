@@ -51,5 +51,20 @@ select city,count(marks) as Students from student group by city having max(marks
 
 select city, count(name) as students from student where grade ="A" group by city  having max(marks) > 90;
 
+SET SQL_SAFE_UPDATES = 0; -- (we can toggle here to on and off sql_safe_updates)
+
+update student set grade = 'O' WHERE marks > 90 ;
+
+UPDATE STUDENT SET MARKS = 82, GRADE ='B'  WHERE ROLLNO = 105;
+
+UPDATE STUDENT SET MARKS = MARKS + 1;
+
+INSERT INTO STUDENT VALUES(107,'farah',83,'B','Delhi');
+
+DELETE FROM STUDENT WHERE ROLLNO = 107 ;
+
+SELECT * FROM STUDENT;
+
+
 
 
